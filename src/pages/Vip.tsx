@@ -5,6 +5,7 @@ import { fetchVip, Drama } from "@/lib/api";
 import { DramaCard } from "@/components/DramaCard";
 import { HorizontalScroll } from "@/components/HorizontalScroll";
 import { SkeletonRow } from "@/components/SkeletonCard";
+import { AppHeader } from "@/components/AppHeader";
 
 export default function Vip() {
   const { data: vipData, isLoading } = useQuery({
@@ -14,11 +15,13 @@ export default function Vip() {
 
   return (
     <div className="mobile-container pb-24">
+      <AppHeader />
+      
       {/* VIP Hero */}
       <motion.section
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="relative p-6 pt-8 overflow-hidden"
+        className="relative p-6 pt-20 overflow-hidden"
       >
         <div
           className="absolute inset-0 opacity-30"

@@ -4,9 +4,9 @@ import { fetchLatest, fetchTrending, fetchVip, Drama } from "@/lib/api";
 import { DramaCard } from "@/components/DramaCard";
 import { HorizontalScroll } from "@/components/HorizontalScroll";
 import { SkeletonRow } from "@/components/SkeletonCard";
+import { AppHeader } from "@/components/AppHeader";
 import { Play, Star } from "lucide-react";
 import { Link } from "react-router-dom";
-
 export default function Index() {
   const { data: trendingData, isLoading: trendingLoading } = useQuery({
     queryKey: ["trending"],
@@ -27,6 +27,7 @@ export default function Index() {
 
   return (
     <div className="mobile-container pb-24">
+      <AppHeader transparent />
       {/* Hero Section */}
       {featuredDrama && (
         <Link to={`/drama/${featuredDrama.bookId}`}>
