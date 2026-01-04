@@ -5,6 +5,7 @@ import { Search as SearchIcon, X, TrendingUp } from "lucide-react";
 import { fetchSearch, fetchTrending, Drama } from "@/lib/api";
 import { DramaCard } from "@/components/DramaCard";
 import { SkeletonCard } from "@/components/SkeletonCard";
+import { AppHeader } from "@/components/AppHeader";
 
 export default function Search() {
   const [query, setQuery] = useState("");
@@ -38,8 +39,10 @@ export default function Search() {
 
   return (
     <div className="mobile-container pb-24">
+      <AppHeader />
+      
       {/* Search header */}
-      <div className="sticky top-0 z-40 p-4 glass border-b border-border">
+      <div className="sticky top-14 z-30 p-4 glass border-b border-border">
         <div className="relative">
           <SearchIcon className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
           <input

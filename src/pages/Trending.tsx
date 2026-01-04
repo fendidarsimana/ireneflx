@@ -5,6 +5,7 @@ import { fetchTrending, fetchLatest, Drama } from "@/lib/api";
 import { DramaCard } from "@/components/DramaCard";
 import { HorizontalScroll } from "@/components/HorizontalScroll";
 import { SkeletonCard, SkeletonRow } from "@/components/SkeletonCard";
+import { AppHeader } from "@/components/AppHeader";
 
 export default function Trending() {
   const { data: trendingData, isLoading: trendingLoading } = useQuery({
@@ -19,8 +20,10 @@ export default function Trending() {
 
   return (
     <div className="mobile-container pb-24">
+      <AppHeader />
+      
       {/* Header */}
-      <div className="p-4 pt-6">
+      <div className="p-4 pt-20">
         <div className="flex items-center gap-2 mb-1">
           <TrendingUp className="w-6 h-6 text-primary" />
           <h1 className="text-xl font-bold text-foreground">Trending</h1>
